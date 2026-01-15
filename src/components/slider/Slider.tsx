@@ -10,12 +10,14 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
 `;
 
 const Arrow = styled.div<{ direction: "left" | "right" }>`
   width: 50px;
   height: 50px;
-  background-color: #fff7f7;
+  background-color: ${({ theme }) => theme.body};
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -46,7 +48,7 @@ const Slide = styled.div<{ bg: string }>`
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: #${(props) => props.bg};
+  background: ${({ theme }) => theme.gradient};
 `;
 
 const ImgContainer = styled.div`
@@ -77,8 +79,15 @@ const Desc = styled.p`
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  &:hover {
+    background-color: #047d40;
+    color: white;
+  }
 `;
 
 const Slider = () => {

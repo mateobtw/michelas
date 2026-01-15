@@ -11,8 +11,8 @@ import { ProductContextState } from '../../types/Product';
 // --- ESTILOS (Styled Components) ---
 const Container = styled.div`
   height: 100px;
-  background-color: #fff; 
-  color: #000;
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
   position: sticky;
   top: 0;
   z-index: 999;
@@ -34,7 +34,7 @@ const Left = styled.div`
 `;
 
 const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
+  border: 0.5px solid ${({ theme }) => theme.border};
   display: flex;
   align-items: center;
   margin-left: 25px;
@@ -169,8 +169,8 @@ const Navbar: React.FC = () => {
         </Left>
 
         <Center>
-          <Logo onClick={navigateToHome}>Michelas</Logo>
-          <LogoMirror onClick={navigateToHome}>Michelas</LogoMirror>
+          <Logo onClick={navigateToHome}>PoliTemu</Logo>
+          <LogoMirror onClick={navigateToHome}>PoliTemu</LogoMirror>
         </Center>
 
         <Right>
